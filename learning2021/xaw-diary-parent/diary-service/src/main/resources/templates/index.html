@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ICBC-INDEX</title>
+    <script src="js/jquery-3.3.1.min.js" type="application/javascript"></script>
+</head>
+<body>
+<h1>aaaaaaaaaa</h1>
+<hr/>
+<button id="bu" onclick="demo()">demo</button>
+
+<div id="demo"></div>
+
+<script>
+    function demo() {
+        $.ajax({
+            //请求方式
+            type: "post",
+            //请求媒体类型
+            contentType: "application/json;charset=UTF-8",
+            //请求地址
+            url: "http://localhost:8080/icbc-ob/hello/ask",
+            //数据
+            data: "CoCo",
+            //请求成功
+            success: function (result) {
+                console.log(result);
+                var lists = result.lists;
+                $.each(lists,function (index, stu) {
+                   $("#demo").append(index+":"+stu.id+"-"+stu.name+"<br>");
+                });
+            },
+            error: function (e) {
+                console.log(e.responseText);
+            }
+
+
+
+        });
+    }
+</script>
+
+</body>
+</html>
