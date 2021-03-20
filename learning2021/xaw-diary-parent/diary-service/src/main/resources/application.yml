@@ -6,3 +6,20 @@ spring:
   thymeleaf:
     suffix: .html
     prefix: classpath:/templates/
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/diary?serverTimezone=UTC
+    username: root
+    password: "000"
+    #选填
+#    tomcat:
+#      Number of ms to wait before throwing an exception if no connection is available.
+#      max-wait: 10000
+#      Maximum number of active connections that can be allocated from this pool at the same time.
+#      max-active: 50
+#      Validate the connection before borrowing it from the pool.
+#      test-on-borrow: true
+
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.wx.diary.pojo

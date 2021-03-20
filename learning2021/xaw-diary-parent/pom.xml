@@ -14,6 +14,7 @@
     <modules>
         <module>diary-service</module>
         <module>diary-stub</module>
+        <module>diary-service-war</module>
     </modules>
     <properties>
         <project.build.jdk>1.8</project.build.jdk>

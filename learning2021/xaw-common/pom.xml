@@ -13,6 +13,7 @@
     <properties>
         <project.build.jdk>1.8</project.build.jdk>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <mybatis-tk.version>1.1.4</mybatis-tk.version>
     </properties>
 
 <dependencies>
@@ -20,6 +21,13 @@
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-log4j2</artifactId>
     </dependency>
+    <!-- MyBatis 通用 Mapper -->
+    <dependency>
+        <groupId>tk.mybatis</groupId>
+        <artifactId>mapper-spring-boot-starter</artifactId>
+        <version>${mybatis-tk.version}</version>
+    </dependency>
+
 </dependencies>
     <build>
         <finalName>xaw-common</finalName>

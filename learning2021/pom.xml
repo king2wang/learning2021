@@ -12,6 +12,7 @@
         <module>xaw-diary-parent</module>
         <module>xaw-access-parent</module>
         <module>xaw-common</module>
+        <module>xaw-mybatisauto</module>
     </modules>
     <properties>
         <project.build.jdk>1.8</project.build.jdk>
