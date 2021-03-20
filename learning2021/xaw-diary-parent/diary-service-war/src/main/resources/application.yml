@@ -1,0 +1,50 @@
+#日志配置
+logging:
+  config: classpath:log4j2.yml
+#spring配置
+spring:
+  thymeleaf:
+    suffix: .html
+    prefix: classpath:/templates/
+  datasource:
+    druid:
+      diary:
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        url: jdbc:mysql://localhost:3306/diary?serverTimezone=UTC
+        username: root
+        password: "UCkCGdgGB4SGoPlRrEJz2sX1bF+FRQCF7N2Nsdu0ysbW3C7ZGGXWxVaxcZpmYeoeEr9iFjt5+fULzdlQCBuy5E4dRiU9rHe2DLBzaE3vt3iyDBUNAXyrDKr1JnHbk5rbDItGLmszZM6rfeHdgkcnDQD+dOh42W69FlWoqEj8qU0="
+        connection-properties: password=${spring.datasource.druid.diary.password}
+        password-callback-class-name: "com.wx.diarywar.config.datasource.DBPasswordCallback"
+        #配置初始化大小/最小/最大
+        initial-size: 1
+        min-idle: 1
+        max-active: 20
+        #获取连接等待超时时间
+        max-wait: 60000
+        #间隔多久进行一次检测，检测需要关闭的空闲连接
+        time-between-eviction-runs-millis: 60000
+        #一个连接在池中最小生存的时间
+        min-evictable-idle-time-millis: 300000
+        validation-query: SELECT 'x'
+        test-while-idle: true
+        test-on-borrow: false
+        test-on-return: false
+        #打开PSCache，并指定每个连接上PSCache的大小。oracle设为true，mysql设为false。分库分表较多推荐设置为false
+        pool-prepared-statements: false
+        max-pool-prepared-statement-per-connection-size: 20
+
+    #选填
+#    tomcat:
+#      Number of ms to wait before throwing an exception if no connection is available.
+#      max-wait: 10000
+#      Maximum number of active connections that can be allocated from this pool at the same time.
+#      max-active: 50
+#      Validate the connection before borrowing it from the pool.
+#      test-on-borrow: true
+
+#mybatis:
+#  mapper-locations: classpath:mapper/*.xml
+#  type-aliases-package: com.wx.diary.pojo
+
+RSA:
+  PRIVATEKEY: MIICdwIBADANBgkqhkiG9w0BAQEFAASCAmEwggJdAgEAAoGBAKqpWke/bFIINEC9z6YNbcsJoXZlZy4/3aauouAdrsRF8DnXqmpdfhVAYRWc5DQCYzRLuEpjwHVYAFHb45KVskkXaP3ylG2IyPzuqGvp4T7v0i93S0B3XIUv3zM3/j+5gUqz5ytDVYUzc8HrY/+5/CiEHg6sSz5qnjbJrpO3Ki9nAgMBAAECgYBbxu9SHlN2WgsftfPxbM9anTdDoIy4hogAl3Hn7I6L5sClmqF+ygCAFTsgkFr4zT/kY8Qb3UEm2chyPTpJHk/dtQS75HEJYCkYyHLH92Wdn9ubTicmK7FZZNmRHBvURt/QETasM9VPjcI+WUgyBlf2PLtqXK8pfsJHKZi4JSxHQQJBAOUBf9ewDhSK9sSPcfOEME+PGydZ8FUDOAgLNlfolRTrEgtnxph3O97dalTGrTLCNk2sMrKiJndpiU3P2u5S3wkCQQC+xz/6UKzYyEJL1Ua1ca2wb74JUngfKARULEU89yCdLV75R069+akLAgv2cnjNwafqQGo5zU8NeQd3gz7Ms8bvAkEAoEetX5ukLzKXxjkTqzmQyo5Blgg30nhfRhn63go2FZ71UTA/6kRBjhlwK4emf0k40qI8FZSx0Y/2/pQFChrMaQJAOFeqCmgnFALYqYK8VjvTewcVTbWAalssJBvK+v1VMXZD1UT8+VgxV2HsXIVkLggiailJ9fYvgaAb12z4cAYsGwJBAL+pdgNHmKGHcrfBL/nRmeQTr1Gr6yzBuBXjPihuihCCQHImbxsIFToD1EtUcXiD9FCTAZ+oTioX1rg4p18Cqss=

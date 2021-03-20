@@ -1,0 +1,6 @@
+DROP TABLE IF EXISTS `stu`;
+CREATE TABLE `stu`  (
+  `STU_ID` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `STU_NAME` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  PRIMARY KEY (`STU_ID`) USING BTREE
+) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
